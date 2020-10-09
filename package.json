@@ -1,0 +1,28 @@
+{
+  "name": "team-profile-generator-gm20",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginomaglaqueucla/team-profile-generator-gm20.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ginomaglaqueucla/team-profile-generator-gm20/issues"
+  },
+  "homepage": "https://github.com/ginomaglaqueucla/team-profile-generator-gm20#readme",
+  "devDependencies": {
+    "jest": "^26.5.2"
+  },
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
