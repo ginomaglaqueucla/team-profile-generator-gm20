@@ -1,3 +1,3 @@
-const Game = require('./lib/Game');
+const Generate = require('./lib/Generate');
 
-new Game().initializeGame();
+new Generate().initialize();
