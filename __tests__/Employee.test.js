@@ -10,7 +10,7 @@ test('creates a employee object', () => {
 });
 
 test('get employee name, id, email, and role', () => {
-    const employee = new Employee();
+    const employee = new Employee('Dave', 1, 'hello@world.com', 'Manager');
   
     expect(employee.getName()).toHaveProperty('name');
     expect(employee.getId()).toHaveProperty('id');
