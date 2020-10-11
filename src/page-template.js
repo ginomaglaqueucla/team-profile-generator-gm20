@@ -1,10 +1,14 @@
 const generateCards = employeeData => {
-    const { Manager, Engineer, Intern } = employeeData;
+    // declare and default variables for manager, will be overwritten depending on employee
     let employeeUnique = "Office Number";
     let employeeUniqueValue = employeeData[0].officeNumber;
     let icon = "mug-hot";
     let uniqueInfo = `Office Number: ${employeeData[0].officeNumber}`;
+
+    // array of html employee cards
     cardHTMLArray = [];
+
+    // loops through each employee
     for(let i = 0; i < employeeData.length; i++){
         if(employeeData[i].role === "Engineer"){
             employeeUnique = "GithHub";
@@ -19,12 +23,11 @@ const generateCards = employeeData => {
             icon = "user-graduate";
             uniqueInfo = `School: ${employeeData[i].school}`;
         }
-        console.log(icon);
         cardHTMLArray[i] = `
         <div class="card m-3" style="width: 18rem;">
         <div class="card-header text-white bg-primary">
-            <p>${employeeData[i].name}</p>
-            <p><i class="fas fa-${icon}"></i> ${employeeData[i].role}</p>
+            <h3>${employeeData[i].name}</h3>
+            <h5><i class="fas fa-${icon}"></i> ${employeeData[i].role}</h5>
         </div>
         <div class="card-body">
             <div class="border p-2">
@@ -44,7 +47,6 @@ const generateCards = employeeData => {
 
 
 module.exports = templateData => {
-    // destructure page data by section
     console.log(templateData);
 
     return `
@@ -59,12 +61,11 @@ module.exports = templateData => {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="jumbotron text-center">
-        My Team
+    <header class="jumbotron text-center text-white" style="background-color:#d64161">
+        <h2>My Team</h2>
     </header>
     <main class="d-flex justify-content-center m-5 row">
         ${generateCards(templateData)}
