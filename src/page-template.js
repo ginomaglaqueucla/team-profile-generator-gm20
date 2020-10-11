@@ -1,3 +1,39 @@
+const generateCards = employeeData => {
+    const { Manager, Engineer, Intern } = employeeData;
+    let employeeUnique = "officeNumber";
+    cardHTMLArray = [];
+    for(let i = 0; i < employeeData.length; i++){
+        console.log(i);
+        console.log(employeeData[2].name);
+        if(employeeData[i] === "Engineer"){
+            employeeUnique = "github";
+        }
+        else if(employeeData[i] === "Intern"){
+            employeeUnique = "school";
+        }
+        cardHTMLArray[i] = `
+        <div class="card m-3" style="width: 18resm;">
+        <div class="card-header text-white bg-primary">
+            <p>${employeeData[i].name}</p>
+            <p>${employeeData[i].role}</p>
+        </div>
+        <div class="card-body">
+            <div class="border p-2">
+                ID: ${employeeData[i].id}
+            </div>
+            <div class="border p-2">
+                Email: ${employeeData[i].email}
+            </div>
+            <div class="border p-2">
+                ${employeeUnique}: ${employeeData[i].employeeUnique}
+            </div>
+        </div>  
+    </div>`
+    }
+    return cardHTMLArray.join('');
+}
+
+
 module.exports = templateData => {
     // destructure page data by section
     console.log(templateData);
@@ -22,76 +58,7 @@ module.exports = templateData => {
         My Team
     </header>
     <main class="d-flex justify-content-center m-5 row">
-    <div class="card m-3" style="width: 18rem;">
-        <div class="card-header text-white bg-primary">Header</div>
-        <div class="card-body">
-            <div class="border p-2">
-                ID iuhhuinuniuni
-            </div>
-            <div class="border p-2">
-                EMAIL
-            </div>
-            <div class="border p-2">
-                SCHOOL
-            </div>
-        </div>  
-    </div>
-    <div class="card m-3" style="width: 18rem;">
-        <div class="card-header text-white bg-primary">Header</div>
-        <div class="card-body">
-            <div class="border p-2">
-                ID inhiununi
-            </div>
-            <div class="border p-2">
-                EMAIL
-            </div>
-            <div class="border p-2">
-                SCHOOL
-            </div>
-        </div>  
-    </div>
-    <div class="card m-3" style="width: 18rem;">
-        <div class="card-header text-white bg-primary">Header</div>
-        <div class="card-body">
-            <div class="border p-2">
-                ID oininnonkm
-            </div>
-            <div class="border p-2">
-                EMAIL
-            </div>
-            <div class="border p-2">
-                SCHOOL
-            </div>
-        </div>  
-    </div>
-    <div class="card m-3" style="width: 18rem;">
-        <div class="card-header text-white bg-primary">Header</div>
-        <div class="card-body">
-            <div class="border p-2">
-                ID njijhuiuugyg
-            </div>
-            <div class="border p-2">
-                EMAIL
-            </div>
-            <div class="border p-2">
-                SCHOOL
-            </div>
-        </div>  
-    </div>
-    <div class="card m-3" style="width: 18rem;">
-        <div class="card-header text-white bg-primary">Header</div>
-        <div class="card-body">
-            <div class="border p-2">
-                ID: hguhuhuihuni
-            </div>
-            <div class="border p-2">
-                EMAIL
-            </div>
-            <div class="border p-2">
-                SCHOOL
-            </div>
-        </div>  
-    </div>
+        ${generateCards(templateData)}
     </main>
     <footer class="container text-center py-3">
     </footer>
