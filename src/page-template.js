@@ -1,15 +1,17 @@
 const generateCards = employeeData => {
     const { Manager, Engineer, Intern } = employeeData;
-    let employeeUnique = "officeNumber";
+    let employeeUnique = "Office Number";
+    let employeeUniqueValue = employeeData[0].officeNumber;
     cardHTMLArray = [];
     for(let i = 0; i < employeeData.length; i++){
-        console.log(i);
-        console.log(employeeData[2].name);
         if(employeeData[i] === "Engineer"){
-            employeeUnique = "github";
+            employeeUnique = "GithHub";
+            employeeUniqueValue = employeeData[i].github;
         }
         else if(employeeData[i] === "Intern"){
-            employeeUnique = "school";
+            employeeUnique = "School";
+            employeeUniqueValue = employeeData[i].School;
+
         }
         cardHTMLArray[i] = `
         <div class="card m-3" style="width: 18resm;">
@@ -25,7 +27,7 @@ const generateCards = employeeData => {
                 Email: ${employeeData[i].email}
             </div>
             <div class="border p-2">
-                ${employeeUnique}: ${employeeData[i].employeeUnique}
+                ${employeeUnique}: ${employeeUniqueValue}
             </div>
         </div>  
     </div>`
