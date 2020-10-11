@@ -3,17 +3,21 @@ const generateCards = employeeData => {
     let employeeUnique = "Office Number";
     let employeeUniqueValue = employeeData[0].officeNumber;
     let icon = "mug-hot";
+    let uniqueInfo = `Office Number: ${employeeData[0].officeNumber}`;
     cardHTMLArray = [];
     for(let i = 0; i < employeeData.length; i++){
         if(employeeData[i].role === "Engineer"){
             employeeUnique = "GithHub";
             employeeUniqueValue = employeeData[i].github;
             icon = "glasses";
+            uniqueInfo = `GitHub: <a href="https://github.com/${employeeData[i].github}">${employeeData[i].github}</a>`;
+
         }
         else if(employeeData[i].role === "Intern"){
             employeeUnique = "School";
             employeeUniqueValue = employeeData[i].School;
             icon = "user-graduate";
+            uniqueInfo = `School: ${employeeData[i].school}`;
         }
         console.log(icon);
         cardHTMLArray[i] = `
@@ -27,10 +31,10 @@ const generateCards = employeeData => {
                 ID: ${employeeData[i].id}
             </div>
             <div class="border p-2">
-                Email: ${employeeData[i].email}
+                Email: <a href="mailto:${employeeData[i].email}">${employeeData[i].email}</a>
             </div>
             <div class="border p-2">
-                ${employeeUnique}: ${employeeUniqueValue}
+                ${uniqueInfo}
             </div>
         </div>  
     </div>`
