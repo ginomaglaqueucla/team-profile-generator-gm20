@@ -2,22 +2,25 @@ const generateCards = employeeData => {
     const { Manager, Engineer, Intern } = employeeData;
     let employeeUnique = "Office Number";
     let employeeUniqueValue = employeeData[0].officeNumber;
+    let icon = "mug-hot";
     cardHTMLArray = [];
     for(let i = 0; i < employeeData.length; i++){
-        if(employeeData[i] === "Engineer"){
+        if(employeeData[i].role === "Engineer"){
             employeeUnique = "GithHub";
             employeeUniqueValue = employeeData[i].github;
+            icon = "glasses";
         }
-        else if(employeeData[i] === "Intern"){
+        else if(employeeData[i].role === "Intern"){
             employeeUnique = "School";
             employeeUniqueValue = employeeData[i].School;
-
+            icon = "user-graduate";
         }
+        console.log(icon);
         cardHTMLArray[i] = `
-        <div class="card m-3" style="width: 18resm;">
+        <div class="card m-3" style="width: 18rem;">
         <div class="card-header text-white bg-primary">
             <p>${employeeData[i].name}</p>
-            <p>${employeeData[i].role}</p>
+            <p><i class="fas fa-${icon}"></i> ${employeeData[i].role}</p>
         </div>
         <div class="card-body">
             <div class="border p-2">
