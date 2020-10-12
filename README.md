@@ -47,7 +47,8 @@ To contribute to this project:
 4. Create Pull Request and add reviewers when ready to merge with main code
 
 ## Test
-nothing
+Go to the following link to see tutorial of how Team Profile Generator works: [Team Profile Generator](https://drive.google.com/file/d/1aPDl_zjYndOU2acW4s7uPxWAdX49Vyp-/view)
+
 
 ## Questions
 Any questions? Contact at: ginomaglaque@gmail.com
